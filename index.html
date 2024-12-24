@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="uz">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Online tarjimon - O'zbek, Ingliz va Rus tillari o'rtasida tarjima qilish uchun bepul xizmat">
+    <meta name="theme-color" content="#667eea">
+
+    <title>Smart Tarjimon - Online Tarjima Xizmati</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="favicon.jpg">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <!-- Material Icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <!-- Asosiy CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h1>
+                <span class="material-icons">translate</span>
+                Smart Tarjimon
+            </h1>
+            <p class="subtitle">Tezkor va qulay tarjima xizmati</p>
+        </header>
+
+        <main class="language-container">
+            <div class="from-lang">
+                <label for="fromLanguage">Asl til:</label>
+                <select id="fromLanguage">
+                    <option value="uz">O'zbek tili</option>
+                    <option value="en">English</option>
+                    <option value="ru">Русский</option>
+                </select>
+                <div class="textarea-wrapper">
+                    <textarea id="fromText" placeholder="Tarjima qilish uchun matn kiriting..."
+                        aria-label="Tarjima uchun matn"></textarea>
+                    <div class="character-count">
+                        <span id="charCount">0</span> / 500
+                    </div>
+                </div>
+            </div>
+
+            <button id="swapBtn" aria-label="Tillarni almashtirish" title="Tillarni almashtirish">
+                <span class="material-icons">swap_horiz</span>
+            </button>
+
+            <div class="to-lang">
+                <label for="toLanguage">Tarjima tili:</label>
+                <select id="toLanguage">
+                    <option value="en">English</option>
+                    <option value="uz">O'zbek tili</option>
+                    <option value="ru">Русский</option>
+                </select>
+                <div class="textarea-wrapper">
+                    <textarea id="toText" placeholder="Tarjima natijasi bu yerda ko'rsatiladi..."
+                        aria-label="Tarjima natijasi" readonly></textarea>
+                </div>
+            </div>
+        </main>
+
+        <footer class="buttons">
+            <button id="translateBtn" class="primary-btn">
+                <span class="material-icons">translate</span>
+                Tarjima qilish
+            </button>
+            <button id="clearBtn" class="danger-btn">
+                <span class="material-icons">clear</span>
+                Tozalash
+            </button>
+            <button id="copyBtn" class="secondary-btn">
+                <span class="material-icons">content_copy</span>
+                Nusxa olish
+            </button>
+        </footer>
+
+        <!-- Loading indikator -->
+        <div class="loading-indicator" id="loadingIndicator">
+            <div class="spinner"></div>
+            <p>Tarjima qilinmoqda...</p>
+        </div>
+    </div>
+
+    <!-- Xabarnoma uchun toast -->
+    <div class="toast" id="toast"></div>
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+</body>
+
+</html>
